@@ -46,7 +46,7 @@
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/botomsheet"
+        android:id="@+id/bottomsheet"
         android:layout_height="match_parent">
 
         <TextView
