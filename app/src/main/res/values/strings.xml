@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">نان سنتی اردکان</string>
     <string name="loading">در حال بارگذاری…</string>
+    <string name="internet">شبکه در دسترس نمیباشد</string>
+    <string name="net"> لطفا اتصال به شبکه خود را بررسی کنید</string>
+    <string name="refresh">به روز رسانی</string>
+    <string name="backMsg">برای خروج دوباره کلید بازگشت را بفشارید</string>
+    <string name="version">نسخه 1</string>
 </resources>
