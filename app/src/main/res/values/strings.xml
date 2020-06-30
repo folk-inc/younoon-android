@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">نان سنتی اردکان</string>
+    <string name="loading">در حال بارگذاری…</string>
 </resources>
