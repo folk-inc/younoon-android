@@ -36,7 +36,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_bottom_sheet, container, false);
-        view.findViewById(R.id.botomsheet).setOnClickListener(view1 -> mListener.refresh());
+        view.findViewById(R.id.bottomsheet).setOnClickListener(view1 -> mListener.refresh());
         view.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         return view;
 
