@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     WebView webView;
     LinearLayout linearLayout;
-    String url = "https://qhkarimeh.ir/";
+    String url = "https://younoon.ir/";
     boolean doubleBackToExitPressedOnce = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         webSetting.setLoadWithOverviewMode(true);
         webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSetting.setSupportZoom(false);
-        webSetting.setSavePassword(false);
+        webSetting.setSavePassword(true);
         webSetting.setBlockNetworkImage(false);
         webSetting.setSupportMultipleWindows(false);
         webSetting.setAppCacheEnabled(true);
