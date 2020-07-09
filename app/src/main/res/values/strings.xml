@@ -5,5 +5,7 @@
     <string name="net"> لطفا اتصال به شبکه خود را بررسی کنید</string>
     <string name="refresh">به روز رسانی</string>
     <string name="backMsg">برای خروج دوباره کلید بازگشت را بفشارید</string>
-    <string name="version">نسخه 1</string>
+    <string name="version">نسخه ۱</string>
+    <string name="wait">لطفا صبور باشید</string>
+    <string name="logotext">نان سنتی اردکان</string>
 </resources>

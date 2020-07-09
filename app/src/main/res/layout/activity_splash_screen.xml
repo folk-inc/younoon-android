@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#23716d"
+    android:background="#000000"
     tools:context=".SplashScreenActivity">
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="90dp"
@@ -12,7 +12,7 @@
         app:lottie_autoPlay="true"
         android:alpha="1"
         app:lottie_loop="true"
-        app:lottie_fileName="test.json"
+        app:lottie_fileName="loading.json"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"/>
@@ -25,20 +25,23 @@
         android:orientation="vertical"
         >
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="170dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/younoon"
             android:layout_gravity="center"
             android:id="@+id/logo"
             />
 
-        <ImageView
-            android:layout_width="350dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/logotext"
+            android:textColor="#ffffff"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
-            android:id="@+id/logotext"/>
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:text="@string/logotext"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
