@@ -1,8 +1,8 @@
 package org.folk.younoon;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -10,38 +10,46 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import im.delight.android.webview.AdvancedWebView;
 
 public class MainActivity extends AppCompatActivity {
     WebView webView;
     LinearLayout linearLayout;
     String url = "https://younoon.ir/";
     boolean doubleBackToExitPressedOnce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webView = findViewById(R.id.webview);
-        linearLayout = findViewById(R.id.pgdata);
-        webView.loadUrl(url);
+        findID();
         websetting();
+        webView.loadUrl(url);
+        load();
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        load();
     }
+
+    public void findID(){
+        webView = findViewById(R.id.webview);
+        linearLayout = findViewById(R.id.pgData);
+    }
+
     public void load(){
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                webView.setVisibility(View.GONE);
-                linearLayout.setVisibility(View.VISIBLE);
+                view.loadUrl(url);
                 return true;
             }
             @Override
+            public void onPageStarted(WebView view, String url, Bitmap facIcon) {
+                linearLayout.setVisibility(View.VISIBLE);
+            }
+            @Override
             public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
                 linearLayout.setVisibility(View.GONE);
-                webView.setVisibility(View.VISIBLE);
             }
         });
     };
@@ -63,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         webSetting.setAllowFileAccess(true);
         webSetting.setAllowContentAccess(true);
         webSetting.setBuiltInZoomControls(true);
+        webSetting.setUseWideViewPort(true);
         webView.setScrollbarFadingEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
         webView.setVerticalScrollBarEnabled(false);
@@ -70,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(this, "jsinterface");
         webView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.setScrollbarFadingEnabled(false);
     }
     @Override
     public void onBackPressed() {
