@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    private SliderPrefManager prefMan;
+//    private SliderPrefManager prefMan;
     @Override
     protected void onResume() {
 
@@ -22,11 +22,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
-        prefMan = new SliderPrefManager(this);
+//        prefMan = new SliderPrefManager(this);
 
         haveNetwork();
 
     }
+
     public void haveNetwork(){
         //For 3G check
         ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
