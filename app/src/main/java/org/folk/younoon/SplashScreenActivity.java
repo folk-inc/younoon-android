@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 public class SplashScreenActivity extends AppCompatActivity {
-//    private SliderPrefManager prefMan;
+    private SliderPrefManager prefMan;
     @Override
     protected void onResume() {
 
@@ -22,7 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
-//        prefMan = new SliderPrefManager(this);
+        prefMan = new SliderPrefManager(this);
         haveNetwork();
 
     }
@@ -40,30 +40,24 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (!is3g && !isWifi){
             Refresh();
         } else {
-//            checkSplash();
-            new Handler().postDelayed((Runnable) () -> {
-                Intent intent;
-                intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }, 3000);
+            checkSplash();
         }
     }
-//    void checkSplash(){
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent;
-//                if (!prefMan.startSlider()) {
-//                    intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-//                } else {
-//                    intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
-//                }
-//                startActivity(intent);
-//                finish();
-//            }
-//        }, 3000);
-//    }
+    void checkSplash(){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent;
+                if (!prefMan.startSlider()) {
+                    intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                } else {
+                    intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
+                }
+                startActivity(intent);
+                finish();
+            }
+        }, 3000);
+    }
 
 
     public void Refresh() {
