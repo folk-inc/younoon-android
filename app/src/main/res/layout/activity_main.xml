@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context="org.folk.younoon.MainActivity"
     android:orientation="horizontal">
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/webview"/>
+    <im.delight.android.webview.AdvancedWebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webview"
+        android:visibility="visible"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

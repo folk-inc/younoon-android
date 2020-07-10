@@ -13,7 +13,7 @@ import android.widget.Toast;
 import im.delight.android.webview.AdvancedWebView;
 
 public class MainActivity extends AppCompatActivity {
-    AdvancedWebView webView;
+    private AdvancedWebView webView;
     LinearLayout linearLayout;
     String url = "https://younoon.ir/";
     boolean doubleBackToExitPressedOnce = false;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     };
+
     @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
     public void websetting(){
         WebSettings webSetting = webView.getSettings();
