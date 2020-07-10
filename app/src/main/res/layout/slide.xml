@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bgLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/slide_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/slide_title_margin_top"
+            android:textStyle="bold"
+            android:textSize="@dimen/slide_title_text_size"
+            android:textColor="@android:color/white"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/slide_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/slide_desc_margin_top"
+            android:paddingRight="@dimen/slide_desc_padding_rl"
+            android:paddingLeft="@dimen/slide_desc_padding_rl"
+            android:gravity="center"
+            android:textSize="@dimen/slide_desc_text_size"
+            android:textColor="@android:color/white"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
