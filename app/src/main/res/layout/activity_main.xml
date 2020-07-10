@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/pg"
             android:theme="@android:style/Animation"
-            android:visibility="gone"
+            android:visibility="visible"
             android:padding="10dp"
             />
     </LinearLayout>
