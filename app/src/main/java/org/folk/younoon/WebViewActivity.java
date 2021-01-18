@@ -73,6 +73,9 @@ public class WebViewActivity extends AppCompatActivity implements  AdvancedWebVi
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
+                if (!isNetworkConnected()){
+                    showBottomSheetDialogFragment();
+                }
                 return true;
             }
             @Override
