@@ -1,53 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.folk.younoon.MainActivity"
-    android:orientation="horizontal">
-    <im.delight.android.webview.AdvancedWebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/webview"
-        android:visibility="visible"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:id="@+id/pgData"
-        android:orientation="horizontal"
-        android:background="@drawable/radius"
-        android:elevation="5dp"
-        tools:ignore="UnusedAttribute">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:textDirection="rtl">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/wait"
-                android:id="@+id/tvWait"
-                android:textStyle="bold"
-                android:paddingStart="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/loading"
-                android:paddingStart="10dp"
-                android:id="@+id/tvLoad"
-                tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/pg"
-            android:theme="@android:style/Animation"
-            android:visibility="visible"
-            android:padding="10dp"
-            />
-    </LinearLayout>
-</RelativeLayout>
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+</ScrollView>
