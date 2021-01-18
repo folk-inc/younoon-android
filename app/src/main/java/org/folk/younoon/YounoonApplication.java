@@ -1,4 +1,4 @@
-package com.jibres.android;
+package org.folk.younoon;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,27 +13,22 @@ import androidx.annotation.NonNull;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.jibres.android.api.Api;
-import com.jibres.android.api.ApiListener;
-import com.jibres.android.managers.AppManager;
-import com.jibres.android.utility.TypefaceUtil;
 
-import java.util.Locale;
 
-public class JibresApplication extends Application {
+public class YounoonApplication extends Application {
 
     public static final String TAG = "amingoli";
     private RequestQueue mRequestQueue;
-    private static JibresApplication mInstance;
+    private static YounoonApplication mInstance;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-        setFont();
+//        setFont();
     }
 
-    public static synchronized JibresApplication getInstance() {
+    public static synchronized YounoonApplication getInstance() {
         return mInstance;
     }
 
@@ -62,48 +57,48 @@ public class JibresApplication extends Application {
         }
     }
 
-    public void refreshLocale(@NonNull Context context) {
-        final String language = AppManager.getAppLanguage(this);
-
-        final Locale locale;
-        if (language != null) {
-            locale = new Locale(language);
-//      locale = new Locale("ar");
-        } else {
-            // nothing to do...
-            return;
-        }
-
-        updateLocale(context, locale);
-        final Context appContext = context.getApplicationContext();
-        if (context != appContext) {
-            updateLocale(appContext, locale);
-        }
-
-        Api.endPoint(getApplicationContext(), status
-                -> Api.android(getApplicationContext(), status1
-                -> {
-            Log.d(TAG, "refreshLocale");
-        }));
-    }
-
-    private void updateLocale(@NonNull Context context, @NonNull Locale locale) {
-        final Resources resources = context.getResources();
-        Configuration config = resources.getConfiguration();
-        config.locale = locale;
-        if (Build.VERSION.SDK_INT >= 21) {
-            config.setLayoutDirection(config.locale);
-        }
-        resources.updateConfiguration(config, resources.getDisplayMetrics());
-        setFont();
-    }
-
-    private void setFont(){
-        String appLanguage = AppManager.getAppLanguage(getApplicationContext());
-        if (appLanguage!=null && appLanguage.equals("fa")){
-            TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "iranyekan_regular.ttf");
-        }else {
-            TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "iranyekan_regular.ttf");
-        }
-    }
+//    public void refreshLocale(@NonNull Context context) {
+//        final String language = AppManager.getAppLanguage(this);
+//
+//        final Locale locale;
+//        if (language != null) {
+//            locale = new Locale(language);
+////      locale = new Locale("ar");
+//        } else {
+//            // nothing to do...
+//            return;
+//        }
+//
+//        updateLocale(context, locale);
+//        final Context appContext = context.getApplicationContext();
+//        if (context != appContext) {
+//            updateLocale(appContext, locale);
+//        }
+//
+//        Api.endPoint(getApplicationContext(), status
+//                -> Api.android(getApplicationContext(), status1
+//                -> {
+//            Log.d(TAG, "refreshLocale");
+//        }));
+//    }
+//
+//    private void updateLocale(@NonNull Context context, @NonNull Locale locale) {
+//        final Resources resources = context.getResources();
+//        Configuration config = resources.getConfiguration();
+//        config.locale = locale;
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            config.setLayoutDirection(config.locale);
+//        }
+//        resources.updateConfiguration(config, resources.getDisplayMetrics());
+//        setFont();
+//    }
+//
+//    private void setFont(){
+//        String appLanguage = AppManager.getAppLanguage(getApplicationContext());
+//        if (appLanguage!=null && appLanguage.equals("fa")){
+//            TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "iranyekan_regular.ttf");
+//        }else {
+//            TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "iranyekan_regular.ttf");
+//        }
+//    }
 }
