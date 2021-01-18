@@ -12,6 +12,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ public class WebViewActivity extends AppCompatActivity implements  AdvancedWebVi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+        webView.loadUrl(url);
         findId();
         websetting();
         url = getIntent().getStringExtra("url");
@@ -45,6 +47,20 @@ public class WebViewActivity extends AppCompatActivity implements  AdvancedWebVi
 
     public void findId(){
         linearLayout = findViewById(R.id.pgData);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, R.string.backMsg, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
