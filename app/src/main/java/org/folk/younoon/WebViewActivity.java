@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
@@ -16,6 +17,9 @@ import im.delight.android.webview.AdvancedWebView;
 public class WebViewActivity extends AppCompatActivity implements  AdvancedWebView.Listener{
     LinearLayout linearLayout;
     private AdvancedWebView webView;
+    String url = "https://younoon.ir/";
+    boolean doubleBackToExitPressedOnce = false;
+    boolean goToIntro = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,9 +27,13 @@ public class WebViewActivity extends AppCompatActivity implements  AdvancedWebVi
         setContentView(R.layout.activity_web_view);
         findId();
         websetting();
+        url = getIntent().getStringExtra("url");
+        goToIntro = getIntent().getBooleanExtra("intro",false);
+
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        load();
     }
 
     public void findId(){
