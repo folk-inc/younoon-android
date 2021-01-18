@@ -60,6 +60,24 @@ public class WebViewActivity extends AppCompatActivity implements  AdvancedWebVi
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
     }
 
+    public void load(){
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap facIcon) {
+                linearLayout.setVisibility(View.VISIBLE);
+            }
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                linearLayout.setVisibility(View.GONE);
+            }
+        });
+    };
+
     @Override
     public void onPageStarted(String url, Bitmap favicon) {
 
